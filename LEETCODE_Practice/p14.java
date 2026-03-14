@@ -30,7 +30,7 @@ public class p14 {
         int r = n - 1;
         int k = m + n - 1;
         while (r >= 0) {
-            if (nums1[l] > nums2[r] && l >= 0) {
+            if (l >= 0 && nums1[l] > nums2[r] ) {
                 nums1[k] = nums1[l];
                 l--;
             } else {
