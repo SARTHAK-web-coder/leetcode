@@ -12,7 +12,6 @@ public class twosum {
             map.put(nums[i], i);// put nums[i]=2 at index i==0(which is equal to) get from map.get(re).
         }
         return new int[] {};
-
     }
 
     public static void main(String[] args) {
@@ -21,9 +20,7 @@ public class twosum {
 
         int[] result = twoSum(nums, target);
         System.out.println("[" + result[0] + "," + result[1] + "]");
-
     }
-
 }
 
 // Input: nums = [2,7,11,15], target = 9

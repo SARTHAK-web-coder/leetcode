@@ -1,4 +1,4 @@
-public class prefixsum {// l=1 and r=3
+public class prefixsum {//index : l=1 to r=3
     public static void main(String[] args) {
         int arr[] = { 2, 4, 5, 7, 8 };
         int prefix[] = new int[arr.length];
@@ -13,10 +13,11 @@ public class prefixsum {// l=1 and r=3
             System.out.print(i + " ");// printing cumilative sum of array = arr
             //just understand how it work .
         }
+        System.out.println();
 
         // finding sum from index l to r
         int l = 1, r = 3;
-        int sum = prefix[r] - prefix[l - 1];
+        int sum = prefix[r] - prefix[l - 1];// for index l=0 just prefix[r]
         System.out.println(sum);
 
     }

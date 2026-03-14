@@ -1,7 +1,8 @@
 public class slidingwindow {
     public static void main(String[] args) {
+        // maximum sum of a subarray .
         int[] arr = { 2, 1, 5, 1, 3, 2, 2 };
-        int k = 3;
+        int k = 3;// here k  size within find maximum sum .
         System.out.println(slidingWindow(arr, k));
     }
 
@@ -10,7 +11,6 @@ public class slidingwindow {
         for (int i = 0; i < k; i++) {
             sum = sum + arr[i];
         }
-        // int sum = 8;
 
         int left = 0;
         int maxSum = sum;
@@ -25,4 +25,6 @@ public class slidingwindow {
         return maxSum;
 
     }
+
+    
 }
