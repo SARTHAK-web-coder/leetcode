@@ -10,8 +10,7 @@ class Solution {
             count++;
         }
         for (int i = k; i < n; i++) {
-            sum = sum + arr[i];
-            sum = sum - arr[i - k];
+            sum = sum + arr[i]- arr[i - k];
             if (sum / k >= threshold) {
                 count++;
             }
