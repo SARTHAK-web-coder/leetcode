@@ -1,5 +1,5 @@
 class Solution {
-    public int numOfSubarrays(int[] arr, int k, int threshold) {
+    public static int numOfSubarrays(int[] arr, int k, int threshold) {
         int n = arr.length;
         int sum = 0;
         for (int i = 0; i < k; i++) {
