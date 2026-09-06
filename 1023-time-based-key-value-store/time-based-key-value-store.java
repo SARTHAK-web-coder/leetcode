@@ -10,25 +10,14 @@ class TimeValue {
 
 class TimeMap {
     private HashMap<String, ArrayList<TimeValue>> map ;
-    // The problem is that ArrayList takes only one type:
-    // ArrayList<Type>
-
-    // not:
-    // ArrayList<Type1, Type2> ❌ 
-
-    // So you use TimeValue class for strong and accessing the timestampe and value.
     public TimeMap() {
-        // Constructor runs when a new TimeMap object is created.
-        // like this --> ["TimeMap", "set", "get", "get", "set", "get", "get"]
         map = new HashMap<>();
     }
 
     public void set(String key, String value, int timestamp) {
         if (map.containsKey(key)) {
-            // // Key already exists → get its list and add new TimeValue
             map.get(key).add(new TimeValue(timestamp, value));
         } else {
-            // // Key doesn't exist → create a new list
             ArrayList<TimeValue> arr = new ArrayList<>();
             arr.add(new TimeValue(timestamp, value));
             map.put(key, arr);
