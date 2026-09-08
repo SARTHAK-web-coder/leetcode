@@ -1,15 +1,15 @@
-class TimeValue {
+class pair {
     int timestamp;
     String value;
 
-    TimeValue(int timestamp, String value){
+    pair(int timestamp, String value) {
         this.timestamp = timestamp;
         this.value = value;
     }
 }
 
 class TimeMap {
-    private HashMap<String, ArrayList<TimeValue>> map;
+    private HashMap<String, ArrayList<pair>> map;
 
     public TimeMap() {
         map = new HashMap<>();
@@ -17,18 +17,16 @@ class TimeMap {
 
     public void set(String key, String value, int timestamp) {
         if (map.containsKey(key)) {
-            map.get(key).add(new TimeValue(timestamp , value));
-
+            map.get(key).add(new pair(timestamp, value));
         } else {
-            ArrayList<TimeValue> arr = new ArrayList<>();
-            arr.add(new TimeValue(timestamp, value));
-            map.put(key ,arr);
+            ArrayList<pair> arr = new ArrayList<>();
+            arr.add(new pair(timestamp, value));
+            map.put(key, arr);
         }
-
     }
 
     public String get(String key, int timestamp) {
-        ArrayList<TimeValue> list = map.get(key);
+        ArrayList<pair> list = map.get(key);
         if(list==null){
             return "";
         }
@@ -39,14 +37,14 @@ class TimeMap {
             int mid = left + (right-left)/2;
             if(list.get(mid).timestamp==timestamp){
                 ans = list.get(mid).value;
-                break;
+                return ans;
             }else if(list.get(mid).timestamp<timestamp){
                 ans = list.get(mid).value;
                 left = mid +1;
             }else{
-                right = mid -1;
+                right = mid-1;
             }
-        } 
+        }
         return ans;
     }
 }
