@@ -10,14 +10,12 @@ class Solution {
                 count++;
                 left++;
                 right--;
+            } else if (people[right] >= people[left]) {
+                count++;
+                right--;
             } else {
-                if (people[right] >= people[left]) {
-                    count++;
-                    right--;
-                } else {
-                    count++;
-                    left++;
-                }
+                count++;
+                left++;
             }
         }
         return count;
