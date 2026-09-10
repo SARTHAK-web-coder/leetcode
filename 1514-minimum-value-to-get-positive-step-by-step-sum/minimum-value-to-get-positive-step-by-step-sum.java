@@ -4,11 +4,11 @@ class Solution {
         int arr[] = new int[n];
         arr[0] = nums[0];
         for (int i = 1; i < n; i++) {
-            arr[i] = arr[i - 1] + nums[i];
+            arr[i] = nums[i] + arr[i - 1];
         }
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < n; i++) {
-            min = Math.min(min ,arr[i]);
+            min = Math.min(min, arr[i]);
         }
         int ans = 0;
         if (min <= 0) {
