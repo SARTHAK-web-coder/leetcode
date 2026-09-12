@@ -1,5 +1,5 @@
 class Solution {
-    public static int characterReplacement(String s, int k) {
+    public int characterReplacement(String s, int k) {
         int n = s.length();
         // HashMap<Character, Integer> map = new HashMap<>();
         int a[] = new int[26];
@@ -13,8 +13,8 @@ class Solution {
             // int count = map.getOrDefault(ch, 0) + 1;
             // map.put(ch, count);
             max = Math.max(max ,a[ch-'A']);
-            int window = r - l + 1;
-            if (window - max > k) {
+            // int window = r - l + 1;
+            while((r - l + 1) - max > k) {
                 // int count2 = map.getOrDefault(s.charAt(l), count) - 1;
                 char chr = s.charAt(l);
                 a[chr-'A']--;
