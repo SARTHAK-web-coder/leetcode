@@ -1,5 +1,5 @@
 class Solution {
-    public int characterReplacement(String s, int k) {
+    public static int characterReplacement(String s, int k) {
         int n = s.length();
         // HashMap<Character, Integer> map = new HashMap<>();
         int a[] = new int[26];
