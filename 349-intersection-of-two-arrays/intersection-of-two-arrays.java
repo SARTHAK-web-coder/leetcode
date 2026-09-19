@@ -7,20 +7,17 @@ class Solution {
         for (int i = 0; i < n; i++) {
             set1.add(nums1[i]);
         }
-        for (int i = 0; i < m; i++) {
-            set2.add(nums2[i]);
-        }
-        ArrayList<Integer> ans = new ArrayList<>();
-        for (int element : set1) {
-            if (set2.contains(element)) {
-                ans.add(element);
+        for (int element : nums2) {
+            if (set1.contains(element)) {
+                set2.add(element);
             }
         }
-        int[] resultArray = new int[ans.size()];
-        for (int i = 0; i < ans.size(); i++) {
-            resultArray[i] = ans.get(i);
+        int[] resultArray = new int[set2.size()];
+        int i=0;
+        for(int val : set2){
+            resultArray[i++]=val;
         }
-
+        
         return resultArray;
     }
 }
