@@ -1,5 +1,5 @@
 class Solution {
-    public void sortColors(int[] nums) {
+    public static void sortColors(int[] nums) {
         int n = nums.length;
         int low = 0, mid = 0, high = n - 1;
         while (mid <= high) {
