@@ -2,18 +2,18 @@ class Solution {
     public int[] sortedSquares(int[] nums) {
         int n = nums.length;
         int arr[] = new int[n];
-        int left = 0;
-        int right = n - 1;
-        for (int i = n - 1; i >= 0; i--) {
-            int leftSqu = nums[left] * nums[left];
-            int rightSqu = nums[right] * nums[right];
-            // comparing squares of left & right element , because they or non-decreasing order , so automatically get high square no.
-            if (leftSqu > rightSqu) {
-                arr[i] = leftSqu;
-                left++;
-            } else {
-                arr[i] = rightSqu;
+        int left=0;
+        int right = n-1;
+        int idx = n-1;
+        while(left<=right){
+            int leftsq = nums[left]*nums[left];
+            int rightsq= nums[right]*nums[right];
+            if(rightsq>=leftsq){
+                arr[idx--]=rightsq;
                 right--;
+            }else{
+                arr[idx--]=leftsq;
+                left++;
             }
         }
         return arr;
