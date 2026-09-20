@@ -20,8 +20,6 @@ class Solution {
                 nums[high] = temp;
                 high--;
             }
-
         }
-        System.out.print(Arrays.toString(nums));
     }
 }
