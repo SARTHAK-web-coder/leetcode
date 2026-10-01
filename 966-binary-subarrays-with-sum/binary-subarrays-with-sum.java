@@ -3,11 +3,13 @@ class Solution {
         if (goal < 0) {
             return 0;
         }
-        int ans = countSub(nums, goal) - countSub(nums, goal - 1);
+        // if I subtract subarray (sum <= goal) ans (sum <= goal-1) 
+        // then i get subarray sum == gaol. it is simple Maths.
+        int ans = atMost(nums, goal) - atMost(nums, goal - 1);
         return ans;
     }
 
-    public static int countSub(int[] nums, int goal) {
+    public static int atMost(int[] nums, int goal) {
         int n = nums.length;
         int count = 0;
         int sum = 0;
